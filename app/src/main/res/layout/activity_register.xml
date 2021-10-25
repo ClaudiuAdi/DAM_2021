@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_Name"
         android:layout_width="317dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/et_Email"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/et_Phone"
         android:layout_width="318dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -49,11 +49,11 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/et_DateBirth"
         android:layout_width="322dp"
         android:layout_height="48dp"
         android:ems="10"
-        android:inputType="textPassword"
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.393"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/label_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Email"
@@ -102,7 +102,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Password"
+        android:text="@string/et_DataBirth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.411" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_Save"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:text="@string/Register"

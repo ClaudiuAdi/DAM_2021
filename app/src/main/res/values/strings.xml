@@ -19,4 +19,6 @@
     <string name="Password">Password</string>
     <string name="Register">Register</string>
     <string name="Cancel">Cancel</string>
+    <string name="et_Data">Data of birth</string>
+    <string name="et_DataBirth">Date of birth</string>
 </resources>
