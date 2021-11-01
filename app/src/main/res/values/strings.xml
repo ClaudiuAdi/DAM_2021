@@ -21,4 +21,5 @@
     <string name="Cancel">Cancel</string>
     <string name="et_Data">Data of birth</string>
     <string name="et_DataBirth">Date of birth</string>
+    <string name="label_events">Events</string>
 </resources>

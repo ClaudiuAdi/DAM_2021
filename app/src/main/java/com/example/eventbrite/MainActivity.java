@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
     private Button btn;
+    private Button btn_event;
     private final int MainActivityRequestCode = 100;
     private TextView textView;
 
@@ -26,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivityForResult(intent, MainActivityRequestCode);
+            }
+        });
+
+        btn_event=findViewById(R.id.button_events);
+        btn_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Events",Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+                startActivity(intent);
             }
         });
 
