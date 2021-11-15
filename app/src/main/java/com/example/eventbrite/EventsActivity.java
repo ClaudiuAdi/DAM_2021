@@ -15,6 +15,7 @@ import java.util.Random;
 public class EventsActivity extends AppCompatActivity {
     private ListView lv;
     private EventAdapter eventAdapter;
+    private JSONRead jsonRead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,36 @@ public class EventsActivity extends AppCompatActivity {
                 Toast.makeText(EventsActivity.this,event.toString(),Toast.LENGTH_LONG).show();
             }
         });
+
+        jsonRead = new JSONRead();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                jsonRead.read("https://jsonkeeper.com/b/MKG0", new IResponse() {
+                    @Override
+                    public void onSuccess(List<Event> lista) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                eventAdapter.updateList(lista);
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(String errorMessage) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(EventsActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        thread.start();
 
     }
 

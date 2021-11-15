@@ -46,4 +46,9 @@ public class EventAdapter extends BaseAdapter {
 
         return view1;
     }
+
+    public void updateList(List<Event> listaNoua) {
+        listaEventuri.addAll(listaNoua);
+        notifyDataSetChanged();
+    }
 }
