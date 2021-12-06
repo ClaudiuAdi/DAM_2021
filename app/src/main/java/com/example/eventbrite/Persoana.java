@@ -3,11 +3,26 @@ package com.example.eventbrite;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "TabelaEventbrite")
 public class Persoana implements Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    private Integer id;
+
+    @ColumnInfo(name = "nume")
     private String nume;
+
+    @ColumnInfo(name = "phone")
     private String phone;
+
+    @ColumnInfo(name = "email")
     private String email;
+
+    @ColumnInfo(name = "birthDate")
     private String dataNastere;
 
     public Persoana(String nume, String phone, String email, String dataNastere) {
@@ -18,6 +33,14 @@ public class Persoana implements Parcelable {
     }
 
     public Persoana() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     protected Persoana(Parcel in) {
